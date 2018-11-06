@@ -1,0 +1,11 @@
+<tr>
+  <td>
+    <%= category.name %>
+  </td>
+  <td>
+    <%= category.products.count %>
+  </td>
+  <td>
+    <%= category.products.count == 0 ? "N/A" : number_to_currency(category.products.average(:price_cents)/100)  %>
+  </td>
+</tr>
