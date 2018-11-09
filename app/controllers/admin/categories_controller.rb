@@ -1,4 +1,5 @@
-class Admin::CategoriesController < ApplicationController
+class Admin::CategoriesController < Admin::ApplicationController
+  before_action :verify_admin
 
   # Get to the all categories
   def index
@@ -26,8 +27,4 @@ class Admin::CategoriesController < ApplicationController
       :name
     )
   end
-
-
-
-
 end
