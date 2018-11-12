@@ -6,6 +6,9 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find params[:id]
+    if current_user
+      @rating = current_user.ratings.build
+    end
   end
 
 end

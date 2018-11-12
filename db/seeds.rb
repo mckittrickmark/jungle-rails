@@ -132,5 +132,31 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+prod1 = Product.find_or_create_by! name: 'Red Bookshelf'
+prod2 = Product.find_or_create_by! name: 'Electric Chair'
+prod3 = Product.find_or_create_by! name: 'Optimal Sleeping Bed'
+
+User.create first_name: "Mark", last_name: "Spaghetti", email: '123@abc.com', password: '123'
+
+puts "Adding ratings"
+
+prod1.ratings.create!({
+  description: 'Very Red',
+  rating: 5,
+  user_id: 1
+})
+
+prod1.ratings.create!({
+  description: 'Uuuuuugly',
+  rating: 1,
+  user_id: 1
+})
+
+prod1.ratings.create!({
+  description: 'Alrightish',
+  rating: 3,
+  user_id: 1
+})
+
 
 puts "DONE!"
